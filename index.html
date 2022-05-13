@@ -1332,39 +1332,31 @@
 
     <div id="modal">
 
-        <svg id="cerrar-modal" width="40" height="40" fill="var(--verde)" class="close-icon" viewBox="0 0 16 16">
-            <path fill-rule="evenodd"
-                d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z" />
-            <path fill-rule="evenodd"
-                d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z" />
-        </svg>
-
         <div>
-            <form action="formulario.php" method="post">
 
-                <div class="campos">
-                    <label>Nombre: </label>
-                    <input type="text" name="nombre" id="nombre" required>
-                </div>
+            <div>
+                <p>
+                    <label>Email:</label> <span id="mail">jonanderlopez5@gmail.com</span>
+                </p>
+                
+                <svg id="cerrar-modal" width="40" height="40" fill="var(--verde)" class="close-icon" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z" />
+                    <path fill-rule="evenodd"
+                        d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z" />
+                </svg>
+            </div>
 
-                <div class="campos">
-                    <label>Email: </label>
-                    <input type="email" name="email" id="email" required>
-                </div>
-
-                <div class="campos">
-                    <label>Deja tu mensaje: </label>
-                    <textarea name="mensaje" id="mensaje" cols="30" rows="10" required></textarea>
-                </div>
-
-                <div class="botones">
-                    <button id="cancelar">Cancelar</button>
-                    <button type="submit">Enviar</button>
-                </div>
-
-            </form>
+            <button id="copiar-email">copiar email</button>
+            <a href="mailto:jonanderlopez5@gmail.com?Subject=contacto desde la web">
+                <button>abrir correo</button>
+            </a>            
         </div>
 
+    </div>
+
+    <div id="my-alert">
+        <p id="alert-message"></p>
     </div>
 
     <footer>

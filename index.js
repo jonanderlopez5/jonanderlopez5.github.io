@@ -1,10 +1,13 @@
-// variables para animacion de titulo
-var my_name = "Jon Ander Lopez";
+// variables para animacion de titulo y mensaaje copiado(contacto)
+const my_name = "Jon Ander Lopez";
 var writen = "";
-var my_span = document.createElement("span");
-var titulo = document.getElementById("titulo");
+const my_span = document.createElement("span");
+const titulo = document.getElementById("titulo");
 var title_counter = 0;
 var interval;
+var interval2;
+var contador = 0;
+const mensaje = "Correo copiado";
 
 
 document.onload = init();
@@ -20,8 +23,8 @@ function init() {
     document.getElementById("contactame").addEventListener("click", abrirModal);
     document.getElementById("contact-me").addEventListener("click", abrirModal);
     document.getElementById("cerrar-modal").addEventListener("click", cerrarModal);
-    document.getElementById("cancelar").addEventListener("click", cerrarModal);
     document.getElementById("menu-movil").addEventListener("click", controlMenu);
+    document.getElementById("copiar-email").addEventListener("click", copiarEmail);
 
 }
 
@@ -33,7 +36,7 @@ function animacion_titulo() {
     titulo.innerHTML = "";
     titulo.appendChild(my_span);
 
-    interval = setInterval(escribir_titulo, 150);
+    interval = setInterval(escribir_titulo, 100);
 }
 
 //control del intervalo y escritura del titulo
@@ -109,4 +112,33 @@ function cerrarModal (){
 function controlMenu (){
     var menu = document.getElementById("menu")
     menu.classList.toggle("se-ve");
+}
+
+function copiarEmail (){
+    var mail = document.getElementById('mail');
+    navigator.clipboard.writeText(mail.innerHTML);
+
+    var myAlert = document.getElementById("my-alert");
+    myAlert.style.display = "flex";
+    
+    interval2 = setInterval(escribir_alerta ,100);
+}
+
+function escribir_alerta (){
+    var alerta = document.getElementById("alert-message");
+    if (alerta.innerHTML.length < mensaje.length) {
+        alerta.innerHTML += mensaje[contador];
+        contador++;
+    } else {
+        clearInterval(interval2);
+        cerrarAlerta();
+    }
+}
+
+function cerrarAlerta (){
+    setTimeout(function(){
+        document.getElementById("my-alert").style.display = "none";
+        document.getElementById("alert-message").innerHTML = "";
+        contador = 0;
+    }, 800);
 }

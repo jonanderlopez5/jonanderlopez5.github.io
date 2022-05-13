@@ -264,67 +264,81 @@ b a{
 }
 
 #modal > div{
-    width: 80%;
+    width: 60%;
     background-color: black;
     display: flex;
     flex-direction: column;
-    padding: 10px ;
+    padding: 25px 40px;
+    font-family: 'VT323', monospace;
+    font-size: 24px; 
+    text-align: center;
+    border-radius: 5px;
+}
+
+#modal > div > a{
+    width: 100%;
+}
+
+#modal > div > div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px ;
 }
 
 #cerrar-modal{
-    position: absolute;
-    top: 30px;
-    right: 30px;
     opacity: 1;
     color: var(--verde);
 }
 
-.campos{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 10px 15px;
-}
 
-.campos label{
-    margin: 10px 0px ;
-    font-weight: bold;
-    font-family: 'VT323', monospace;
-    font-size: 24px; 
-}
-
-.campos input, .campos input:focus-visible, .campos textarea, .campos textarea:focus-visible{
-    background-color: black;
-    border: none;
-    border-bottom: 1px solid var(--verde);
-    outline: none;
-    color: var(--verde);
-
-}
-
-.botones{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    margin: 15px;
-}
-
-.botones button{
+button{
+    width: 100%;
     color: black;
     background-color: var(--verde);
-    border: 1px solid black;
+    border: 1px solid var(--verde);
     padding: 5px 10px;
     font-weight: bolder;
     font-family: 'VT323', monospace;
     font-size: 24px; 
+    margin: 2px;
 }
 
-.botones button:hover{
+button:hover{
     background-color: black;
     color: black;
     color: var(--verde);
     border: 1px solid var(--verde);
+}
+
+@media (max-width: 576px) {
+    #modal > div > div{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px ;
+    }
+
+    #modal > div > div > svg{
+        align-self: flex-end;
+    }
+}
+
+#my-alert{
+    display: none;
+    position: fixed;
+    background-color: black;
+    top: 45%;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    font-family: 'VT323', monospace;
+    font-size: 32px;
+    z-index: 1;
+    transition: 3s;
 }
 
 footer{
