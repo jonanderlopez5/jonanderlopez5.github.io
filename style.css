@@ -17,7 +17,11 @@ body{
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
-    
+}
+
+*::selection{
+    background-color: var(--verde);
+    color: black;
 }
 
 header{
@@ -40,6 +44,11 @@ h1{
     text-decoration: underline;
     text-decoration-color: var(--negro);
     font-size: 90px;
+}
+.title-cursor::selection{
+    color: transparent;
+    background-color: var(--verde);
+    text-decoration-color: transparent;
 }
 @keyframes title-cursor {
     0%   {color: var(--verde); background-color: var(--verde); text-decoration-color: black;}
@@ -210,6 +219,12 @@ b a{
     text-decoration: underline;
     text-decoration-color: black;
     font-size: 12px;
+}
+
+.teminal-cursor::selection{
+    color: transparent;
+    background-color: var(--verde);
+    text-decoration-color: transparent;
 }
 @keyframes terminal-pointer {
     0%   {color: white; background-color: white; text-decoration-color: black;}
