@@ -59,9 +59,10 @@ h1{
 
 .persona{
     border-radius: 200px;
-    background-color: rgb(172, 168, 168);
-    color: var(--negro);
-    border: 5px solid white;
+    background-image: url('./media/fotoCV.png');
+    background-size: cover;
+    width: 200px;
+    height: 200px;
 }
 
 @media (max-width: 960px) {

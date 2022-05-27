@@ -9,7 +9,6 @@ var interval2;
 var contador = 0;
 const mensaje = "Correo copiado";
 
-
 document.onload = init();
 
 //asignacion de eventos
